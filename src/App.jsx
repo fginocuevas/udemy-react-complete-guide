@@ -1,11 +1,8 @@
-import reactImg from './assets/react-core-concepts.png';
+
 import { CORE_CONCEPTS } from './data';
-
-const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
-
-function genRandomInt(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
+import Header from './components/Headers';
+import CoreConcept from './components/CoreConcept';
+import TabButton from './components/buttons/TabButton';
 
 export const userData = {
   firstName: 'Gino', 
@@ -22,27 +19,6 @@ export function User() {
       <p>{userData.title}</p>
     </div>
   );
-}
-
-function Header() {
-  return (
-    <header>
-        <img src={reactImg} alt="Stylized atom" />
-        <h1>React Essentials</h1>
-        <p>
-          Fundamental React concepts you will need for almost any app you are
-          going to build!
-        </p>
-      </header>
-  )
-}
-
-function CoreConcept(props){
-  return <li>
-    <img src={props.img} alt={props.title} />
-    <h3>{props.title}</h3>
-    <p>{props.description}</p>
-  </li>
 }
 
 function App() {
@@ -66,7 +42,12 @@ function App() {
             }
           </ul>
         </section>
-        
+        <section id="examples">
+            <h2>Examples</h2>
+            <menu>
+              <TabButton label="Components"/>
+            </menu>
+        </section>
       </main>
     </div>
   );
